@@ -12,7 +12,7 @@ namespace AddressBook.Repository
         public Dictionary<long, person> contactDetailDictionary = new Dictionary<long, person>();
         public void AddPersonDetails(person contactDetails)
         {
-            contactDetailDictionary.Add(Convert.ToInt64(contactDetails.MobileNumber), contactDetails);
+            contactDetailDictionary.Add(Convert.ToInt64(contactDetails.MobileNumber), contactDetails); // keys is mobileno. & contactDetails is a instance(object) 
         }
         public void DisplayContact()
         {
