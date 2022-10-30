@@ -19,7 +19,8 @@ namespace AddressBook
             {
                 Console.WriteLine("Enter 1 for Add person Details ");
                 Console.WriteLine("Enter 2 for displaying person details");
-                Console.WriteLine("Enter 3 for Exit");
+                Console.WriteLine("Enter 3 for Editing person details");
+                Console.WriteLine("Enter 4 for Exit");
 
                 int userInput = int.Parse(Console.ReadLine());
 
@@ -57,6 +58,38 @@ namespace AddressBook
 
                         break;
                     case 2:contactDetailsRepo.DisplayContact();
+                        break;
+                    case 3:
+                        Console.WriteLine("Please Enter person  Details which you want to edit : ");
+                        Console.Write("Enter tha First name : ");
+                        string first_Name1 = Console.ReadLine();
+                        Console.Write("Enter tha Last name : ");
+                        string last_Name1 = Console.ReadLine();
+                        Console.Write("Enter tha Mobile Number : ");
+                        string mobile_Number1 = Console.ReadLine();
+                        Console.Write("Enter tha  Email Id : ");
+                        string email_Id1 = Console.ReadLine();
+                        Console.Write("Enter tha Address  : ");
+                        string address1 = Console.ReadLine();
+                        Console.Write("Enter tha City : ");
+                        string city1 = Console.ReadLine();
+                        Console.Write("Enter tha State name : ");
+                        string state1 = Console.ReadLine();
+                        Console.Write("Enter tha Zip : ");
+                        string zip1 = Console.ReadLine();
+                        person person2 = new person()
+                        {
+                            FirstName = first_Name1,
+                            LastName = last_Name1,
+                            MobileNumber = int.Parse(mobile_Number1),
+                            Email = email_Id1,
+                            Address = address1,
+                            City = city1,
+                            State = state1,
+                            zip = int.Parse(zip1),
+                        };
+                        contactDetailsRepo.Edit_Person_Details(person2);
+                       
                         break;
                     default:Console.WriteLine("Exiting the loop .");
                         flag = false;

@@ -9,10 +9,23 @@ namespace AddressBook.Repository
 {
     internal class ContactDetailsRepo
     {
-        public Dictionary<long, person> contactDetailDictionary = new Dictionary<long, person>();
+        public Dictionary<string, person> contactDetailDictionary = new Dictionary<string, person>();
         public void AddPersonDetails(person contactDetails)
         {
-            contactDetailDictionary.Add(Convert.ToInt64(contactDetails.MobileNumber), contactDetails); // keys is mobileno. & contactDetails is a instance(object) 
+            contactDetailDictionary.Add(contactDetails.FirstName, contactDetails); // keys is mobileno. & contactDetails is a instance(object) 
+        }
+
+        public void Edit_Person_Details (person contactDetails)
+        {
+            bool temp = contactDetailDictionary.ContainsKey(contactDetails.FirstName);
+            if (temp)
+            {
+                contactDetailDictionary[contactDetails.FirstName] = contactDetails;
+            }
+            else
+            {
+                Console.WriteLine("User does not exist.");
+            }
         }
         public void DisplayContact()
         {
