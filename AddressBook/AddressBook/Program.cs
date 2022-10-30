@@ -17,10 +17,11 @@ namespace AddressBook
 
             while(flag)
             {
-                Console.WriteLine("Enter 1 for Add person Details ");
-                Console.WriteLine("Enter 2 for displaying person details");
-                Console.WriteLine("Enter 3 for Editing person details");
-                Console.WriteLine("Enter 4 for Exit");
+                Console.WriteLine("Enter 1 for Add person Details : ");
+                Console.WriteLine("Enter 2 for displaying person details : ");
+                Console.WriteLine("Enter 3 for Editing person details : ");
+                Console.WriteLine("Enter 4 for Delete person details : ");
+                Console.WriteLine("Enter 5 for Exit : ");
 
                 int userInput = int.Parse(Console.ReadLine());
 
@@ -89,49 +90,18 @@ namespace AddressBook
                             zip = int.Parse(zip1),
                         };
                         contactDetailsRepo.Edit_Person_Details(person2);
-                       
+                        break;
+                    case 4:
+                        Console.WriteLine("Please Enter person  Details which you want to delete : ");
+                        Console.Write("Enter tha First name : ");
+                        string first_Name2 = Console.ReadLine();
+                        contactDetailsRepo.delete_Person(first_Name2);
                         break;
                     default:Console.WriteLine("Exiting the loop .");
                         flag = false;
                         break;
-
-
                 }
-
             }
-            
-            
-
-            /*     person person1 = new person()
-                 {
-                     FirstName = "Sanjeev",
-                     LastName = "Singh",
-                     MobileNumber = 8266953797,
-                     Email = "sanjeevsingh.77d@gmail.com",
-                     Address = "Om shanti colony 22 khaza ",
-                     City = "Etawah",
-                     State = "U.P",
-                     zip = 2060001
-                 };
-
-
-                 person person2 = new person();
-                 person2.FirstName = "Anubhav";
-                 person2.LastName = "Singh";
-                 person2.MobileNumber = 6384834910;
-                 person2.Email = "anubhav123@gmail.com";
-                 person2.Address = "new Ashok nagar ";
-                 person2.City = "Noida";
-                 person2.State = "U.P";
-                 person2.zip = 2060001;     */
-
-
-            //     ContactDetailsRepo contactDetailsRepo = new ContactDetailsRepo();
-            //   contactDetailsRepo.AddPersonDetails(person1);
-            // contactDetailsRepo.AddPersonDetails(person2);
-            //contactDetailsRepo.DisplayContact();
-
-
         }
     }
 }
